@@ -1,0 +1,27 @@
+<view>
+  <swiper indicator-dots="{{true}}" style='height:422rpx'
+    autoplay="{{true}}" interval="5000" duration="1000">
+    <swiper-item>
+      <image src="http://o86bpj665.bkt.clouddn.com/posters/redux-tower.png" mode="widthFix" style="width: 750rpx"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://o86bpj665.bkt.clouddn.com/posters/gulp-flex-res.png" mode="widthFix" style="width: 750rpx"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://o86bpj665.bkt.clouddn.com/posters/gitbeijing.png" mode="widthFix" style="width: 750rpx"/>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view>
+  <text class="label">已经发布的课程</text>
+  <view class="courses">
+     <view wx:for="{{courses}}" wx:key="id">
+      <navigator class="course" url='../course/course?link={{item.link}}'>
+        <image src='{{item.cover}}' mode='widthFix' style='width:682rpx'></image>
+        <text class="title">{{item.title}}</text>
+      </navigator>
+    </view>
+
+  </view>
+</view>
