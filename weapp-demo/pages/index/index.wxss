@@ -28,3 +28,24 @@
   padding-top: 16px;
   padding-bottom: 16px;
 }
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  padding: 20rpx 10%;
+  margin-right: 10rpx;
+} 
+
+.search-holder {
+  font-size: 14px;
+}
+
+.search-text {
+  border: solid 1px #ddd;
+  padding-left: 10rpx;
+}
+
+.search-btn {
+  font-size: 14px;
+}

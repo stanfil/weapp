@@ -9,7 +9,7 @@
   {{detail.intro}}
 </view>
 
-<view class='content'>
+ <view class='content'>
   <view class="header">课程内容</view>
   <view wx:for='{{detail.content}}' wx:key="id">
     <view class='chapter'>{{item.header}}</view>
@@ -17,4 +17,4 @@
         {{index + 1}}. {{item.title}}
     </view>
   </view>
-</view>
+</view> 

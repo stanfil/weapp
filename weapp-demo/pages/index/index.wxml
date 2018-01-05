@@ -1,4 +1,4 @@
-<view>
+<!-- <view>
   <swiper indicator-dots="{{true}}" style='height:422rpx'
     autoplay="{{true}}" interval="5000" duration="1000">
     <swiper-item>
@@ -11,11 +11,14 @@
       <image src="http://o86bpj665.bkt.clouddn.com/posters/gitbeijing.png" mode="widthFix" style="width: 750rpx"/>
     </swiper-item>
   </swiper>
+</view> -->
+<view class='search'>
+  <input class='search-text' placeholder='输入课程关键字' placeholder-class='search-holder' />
+  <button class='search-btn' size='mini'>search</button>
 </view>
-
 <view>
   <text class="label">已经发布的课程</text>
-  <view class="courses">
+   <view class="courses">
      <view wx:for="{{courses}}" wx:key="id">
       <navigator class="course" url='../course/course?link={{item.link}}'>
         <image src='{{item.cover}}' mode='widthFix' style='width:682rpx'></image>
@@ -23,5 +26,5 @@
       </navigator>
     </view>
 
-  </view>
+  </view> 
 </view>
