@@ -32,9 +32,8 @@
 .search {
   display: flex;
   align-items: center;
-  height: 60rpx;
-  padding: 20rpx 10%;
-  margin-right: 10rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
 } 
 
 .search-holder {
@@ -42,10 +41,19 @@
 }
 
 .search-text {
-  border: solid 1px #ddd;
+  width: 560rpx;
+  height: 72rpx;
   padding-left: 10rpx;
+  background-color: #E7E7E7;
 }
 
 .search-btn {
+  text-align: center;
+  width: 130rpx;
+  height: 72rpx;
+  padding-top: 20rpx;
+  margin: 0;
+  background-color: #fff;
+  color: #517EEC;
   font-size: 14px;
 }

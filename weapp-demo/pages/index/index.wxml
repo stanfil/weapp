@@ -1,20 +1,6 @@
-<!-- <view>
-  <swiper indicator-dots="{{true}}" style='height:422rpx'
-    autoplay="{{true}}" interval="5000" duration="1000">
-    <swiper-item>
-      <image src="http://o86bpj665.bkt.clouddn.com/posters/redux-tower.png" mode="widthFix" style="width: 750rpx"/>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://o86bpj665.bkt.clouddn.com/posters/gulp-flex-res.png" mode="widthFix" style="width: 750rpx"/>
-    </swiper-item>
-    <swiper-item>
-      <image src="http://o86bpj665.bkt.clouddn.com/posters/gitbeijing.png" mode="widthFix" style="width: 750rpx"/>
-    </swiper-item>
-  </swiper>
-</view> -->
 <view class='search'>
   <input class='search-text' placeholder='输入课程关键字' placeholder-class='search-holder' />
-  <button class='search-btn' size='mini'>search</button>
+  <div class='search-btn'>搜索</div>
 </view>
 <view>
   <text class="label">已经发布的课程</text>
