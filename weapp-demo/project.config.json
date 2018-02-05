@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
 	"appid": "wx4180dad0a125ffa4",
-	"projectname": "weapp-demo",
+	"projectname": "weapp",
 	"condition": {
 		"search": {
 			"current": -1,
