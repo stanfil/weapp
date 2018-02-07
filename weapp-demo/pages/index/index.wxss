@@ -85,6 +85,7 @@
   display: flex;
   font-size: 30rpx;
   color: #666666;
+   
 }
 .stv-container .tab-bar .tab-active {
   color: #2d80ff;
