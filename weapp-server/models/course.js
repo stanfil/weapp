@@ -8,7 +8,7 @@ let CourseSchema = new Schema({
     price: { type: Number },
     intro: { type: String },
     introvideolink: { type: String },
-    resourselink: {type: String},
+    resourcelink: {type: String},
     content: {type: String}
 });
 

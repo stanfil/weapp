@@ -1,5 +1,5 @@
 <view class='media'>
-  <view class='name'>{{detail.name}}</view>
+  <view class='name'>{{detail.title}}</view>
   <view wx:if="{{link.length > 0}}">
     <video src="{{link}}" controls  class='video'></video>
   </view>
@@ -12,9 +12,6 @@
  <view class='content'>
   <view class="header">课程内容</view>
   <view wx:for='{{detail.content}}' wx:key="id">
-    <view class='chapter'>{{item.header}}</view>
-    <view wx:for='{{item.section}}' wx:key='title' class='title'>
-        {{index + 1}}. {{item.title}}
-    </view>
+    <view bindtap="setLink" class='chapter'  data-link="{{item.videolink}}">{{item.title}}</view>
   </view>
 </view> 

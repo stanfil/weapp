@@ -18,7 +18,7 @@
         <scroll-view style="height:100%" scroll-y>
           <view class="courses">
               <view wx:for="{{courses[index]}}" wx:key="id">
-                <navigator class="course" url='../course/course?link={{item.link}}'>
+                <navigator class="course" url='../course/course?id={{item.id}}'>
                   <image src='{{item.cover}}' mode='widthFix' style='width:682rpx'></image>
                   <text class="title">{{item.title}}</text>
                 </navigator>

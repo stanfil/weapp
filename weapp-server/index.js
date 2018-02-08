@@ -5,6 +5,7 @@ let bodyParser = require('body-parser');
 let cors = require('cors');
 let uri = require('./config.js').uri;
 let Course = require('./models/course.js');
+let courses = require('./data/courses.js'); //导入数据
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
@@ -18,29 +19,28 @@ db.once('open', function () {
     console.log('success!');
 });
 
-let course = new Course({
-    id: "15",
-    cover: "http://o86bpj665.bkt.clouddn.com/posters/chrome-devtools.png",
-    title: "Chrome 开发者工具",
-    price: 88,
-    intro: "",
-    introvideolink: "",
-    resourselink: "",
-    content: ""
-});
-course.save();
-
 app.post('/course/index',(req, res)=>{
-    // let data = req.body;
-    // console.log(data);
+    let { keyword, label } = req.body;
+    console.log(label);
     Course.find().select('id cover title').exec(function (err, courses) {
-        if(err) return  err;
-        res.send(courses);
+        if(err) {
+            res.send(err);
+            return err;
+        }
+        let arr = courses.filter((item)=>(item.title.indexOf(keyword))!==-1);
+        res.send(arr);
     });
 });
 
 app.post('/course/details',(req, res)=>{
-    res.send("Hello World!");
+    let { id } = req.body;
+    Course.findOne({"id": id}).select('id title price intro introvideolink resourcelink content').exec((err, course)=>{
+        if(err) {
+            res.send(err);
+            return err;
+        }
+        res.send(course);
+    })
 });
 
 
