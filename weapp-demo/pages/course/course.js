@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    let url = "http://localhost:3000/course/details";
+    let url = "https://sansisan.xin/course/details";
     let data = {id: options.id};
     wx.request({
       url,
@@ -24,7 +24,7 @@ Page({
         let course = res.data;
         course.content = JSON.parse(course.content);
         that.setData({
-          detail: course, 
+          detail: course,
           link: course.introvideolink,
         });
         // console.log(that.data.link);

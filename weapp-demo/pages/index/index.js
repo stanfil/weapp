@@ -23,7 +23,7 @@ Page({
       this.setData({ stv: this.data.stv })
       this.tabsCount = tabs.length;
     } catch (e) {
-    
+
     }
     // //初始化课程内容
     // var that = this;
@@ -63,7 +63,7 @@ Page({
       keyword:this.data.searchKeyword.trim(),    // 搜索关键词
       label:this.data.labels[this.data.activeTab]    // 标签
     };
-    let url = 'http://localhost:3000/course/index'
+    let url = 'https://sansisan.xin/course/index'
     wx.request({
       url,
       data,
