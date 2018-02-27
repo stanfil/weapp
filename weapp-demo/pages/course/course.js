@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    let url = "https://sansisan.xin/course/details";
+    let url = `${getApp().globalData.BASEURL}/course/details`;
     let data = {id: options.id};
     wx.request({
       url,

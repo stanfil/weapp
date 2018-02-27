@@ -25,22 +25,7 @@ Page({
     } catch (e) {
 
     }
-    // //初始化课程内容
-    // var that = this;
-    // let {courses} = this.data;
     this.getCourses();
-    // wx.request({
-    //   url: 'https://raw.githubusercontent.com/happypeter/weapp-demo/master/doc/index.json',
-    //   success: function (res) {
-    //     for (let i in courses) {
-    //       courses[i]=res.data.published;
-    //     }
-    //     that.setData({courses});
-    //   },
-    //   fail: function () {
-    //     console.log('fail')
-    //   }
-    // })
   },
 
   //get search keyword
@@ -63,10 +48,13 @@ Page({
       keyword:this.data.searchKeyword.trim(),    // 搜索关键词
       label:this.data.labels[this.data.activeTab]    // 标签
     };
-    let url = 'https://sansisan.xin/course/index'
+    let url = `${getApp().globalData.BASEURL}/course/index`;
     wx.request({
       url,
       data,
+      header: {
+          'Authorization': wx.getStorageSync('token')
+      },
       method: "POST",
       success(res){
         console.log(res);
@@ -75,7 +63,7 @@ Page({
         that.setData({ courses });
       },
       fail(res){
-        console.log("request failed");
+        if(res.data.error) return console.log(res.data.error);
       }
     });
   },
@@ -150,7 +138,7 @@ Page({
     this.setData({ activeTab: activeTab })
     stv.offset = stv.windowWidth * activeTab;
     this.setData({ stv: this.data.stv })
-    //this.getCourses();
+    this.getCourses();
   },
   handlerTabTap(e) {
     this._updateSelectedPage(e.currentTarget.dataset.index);

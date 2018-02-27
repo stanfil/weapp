@@ -1,21 +1,32 @@
 App({
-
-  /**
-   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
-   */
-  onLaunch: function () {
-    wx.login({
-      success: (res) => {
-        if (res.code) {
-          wx.getUserInfo({
+    globalData : {
+        // BASEURL : "http://localhost:3000"
+        BASEURL : "https://sansisan.xin"
+    },
+    onLaunch: () => {
+        wx.login({
             success: (res) => {
-              wx.setStorageSync('user', res.userInfo);
+                let code = res.code;
+                if (code) {
+                    wx.getUserInfo({
+                        success: (res) => {
+                            wx.setStorageSync('user', res.userInfo);
+                            wx.request({
+                                url: `${getApp().globalData.BASEURL}/login`,
+                                method: 'POST',
+                                data: {
+                                    code
+                                },
+                                success: res => {
+                                    wx.setStorageSync('token', res.data.token);
+                                }
+                            })
+                        }
+                    })
+                } else {
+                    console.log("获取用户登录信息失败！" + res.errMsg)
+                }
             }
-          })
-        } else {
-          console.log("获取用户登录信息失败！" + res.errMsg)
-        }
-      }
-    })
-  },
+        })
+    },
 })
